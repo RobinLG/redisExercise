@@ -15,7 +15,7 @@ public class ObjectToStr {
         String userJson = JSON.toJSONString(user);
         System.out.println("JsonString:" + userJson);
 
-        Jedis jedis = new Jedis("127.0.0.1", 6379);
+        Jedis jedis = new Jedis("host", 6379);
         jedis.set("user", userJson);
         String result = jedis.get("user");
         System.out.println("RedisResult:" + result);
